@@ -1,0 +1,17 @@
+def main():
+	traitement()
+	try:
+		time.sleep(1)
+		main()
+	except KeyboardInterrupt:
+		print("Echap pour quitter, Espace pour revenir en arrière, ailleurs pour écrire")
+		z=getch()
+		if ord(z)==27: #Echap
+			sys.exit(0)
+		elif ord(z)==32: #Espace
+			main()
+		else:
+			ecrire()
+
+print("Faites Ctrl+C pour quitter ou écrire",'\n') #cette chose ne sera donc dite qu'une seule fois, au début.
+main()
